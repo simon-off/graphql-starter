@@ -26,7 +26,7 @@ const typeDefs = `#graphql
   # clients can execute, along with the return type for each. Arguments to the mutation
   # are passed inside the parentheses.
   type Mutation {
-    addBook(title: String, author: String): Book
+    addBook(title: String!, author: String!): Book
   }
 `;
 
