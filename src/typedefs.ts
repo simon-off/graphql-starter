@@ -1,6 +1,4 @@
 const typeDefs = `#graphql
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
-
   # This "Book" type defines the queryable fields for every book in our data source.
   type Book {
     id: ID
@@ -8,6 +6,7 @@ const typeDefs = `#graphql
     author: Author
   }
 
+  # This "Author" type defines the queryable fields for every author in our data source.
   type Author {
     id: ID
     name: String
@@ -15,8 +14,7 @@ const typeDefs = `#graphql
   }
 
   # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "books" query returns an array of zero or more Books (defined above).
+  # clients can execute, along with the return type for each.
   type Query {
     book(id: ID): Book
     books: [Book]
@@ -24,6 +22,9 @@ const typeDefs = `#graphql
     authors: [Author]
   }
 
+  # The "Mutation" type is also special: it lists all of the available mutations that
+  # clients can execute, along with the return type for each. Arguments to the mutation
+  # are passed inside the parentheses.
   type Mutation {
     addBook(title: String, author: String): Book
   }

@@ -1,6 +1,11 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import typeDefs from "./typedefs.js";
+
+// Two different versions of the resolvers. One simply uses the data-temp.js file
+// as the data source. This however, won't give "save" the changes you make in
+// your mutations. The other one targets the files in /src/data/ with the help
+// of the npm package fakebase. It emulates a DB with normal .json files.
 import resolversTemp from "./resolvers-temp.js";
 import resolversFake from "./resolvers-fakebase.js";
 
@@ -8,6 +13,7 @@ import resolversFake from "./resolvers-fakebase.js";
 // definition and your set of resolvers.
 const server = new ApolloServer({
   typeDefs: typeDefs,
+  // CHANGE THIS TO: 'resolvers: resolversFake' IF YOU WANNA USE FAKEBASE INSTEAD
   resolvers: resolversTemp,
 });
 
