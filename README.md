@@ -21,7 +21,7 @@ const server = new ApolloServer({
 
 ## 💿 Running the app:
 
-Start with cloning this repo on your local machine:
+Start by cloning this repo on your local machine:
 
 ```sh
 $ git clone https://github.com/simon-off/graphql-starter.git
